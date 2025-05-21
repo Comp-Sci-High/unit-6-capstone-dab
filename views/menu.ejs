@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Menu</h1>
+    <br>
+
+    <div class="Food-grid">
+      <% for (let i = 0; i < Foods.length; i++) { %>
+        <div class="Food-card">
+
+          <img src="<%= Foods[i].image %>" alt="<%= Foods[i].foodName %>" />
+
+          <div class="food">
+            <h2><%= Foods[i].foodName %></h2>
+            <p><strong>Ingredients:</strong> <%= Foods[i].indredients %></p>
+            <p><strong>Price:</strong> <%= Foods[i].price %></p>
+            <p><strong>hot:</strong> <%= Foods[i].hot %></p>
+            <p><strong>calories:</strong> <%= Foods[i].calories %></p>
+            <p><strong>rating:</strong> <%= Foods[i].rating %></p>
+          </div>
+
+        </div>
+      <% } %>
+    </div>
+
+</body>
+</html>

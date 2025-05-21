@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Momento Coffee Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="aboutPage.html">About Oscar</a>
+    <a href="menu.html">Menu</a>
+    <a href="Locations.html">More Info</a>
+  </nav>
+
+  <header>
+    <h1>Welcome to Momento!</h1>
+  </header>
+
+  <div class="slideshow-container">
+    <img class="mySlides" src="images/slide1.jpg" style="width:100%">
+    <img class="mySlides" src="images/slide2.jpg" style="width:100%">
+    <img class="mySlides" src="images/slide3.jpg" style="width:100%">
+  </div>
+
+  <main>
+    <h2>Customer Favorites</h2>
+    <div class="specials">
+      <div class="card">
+        <h3>Café con Leche</h3>
+        <p>Rich espresso with steamed milk.</p>
+      </div>
+      <div class="card">
+        <h3>Cubano Sandwich</h3>
+        <p>Pressed sandwich with pork, ham, pickles, and mustard.</p>
+      </div>
+      <div class="card">
+        <h3>Guava Cream Cheese Bagel</h3>
+        <p>Toasted bagel topped with guava and cream cheese.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      let slides = document.getElementsByClassName("mySlides");
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+  </script>
+</body>
+</html>

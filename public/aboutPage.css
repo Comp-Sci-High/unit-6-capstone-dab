@@ -1,0 +1,164 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f0e6; /* Light beige background */
+  color: #2e2e2e;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #4b2e2e; /* Dark brown */
+  padding: 1em;
+  position: relative;
+}
+
+nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+nav .dropbtn {
+  background-color: #4b2e2e;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #6d4c41;
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+nav .dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+nav .dropdown-content a:hover {
+  background-color: #a1887f;
+}
+
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2em 0;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: #4b2e2e;
+}
+
+/* Slideshow */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+}
+
+/* Specials Section */
+.specials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 2em;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1em;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  color: #4b2e2e;
+  margin-bottom: 0.5em;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 2em;
+  align-items: center;
+}
+
+.about-section img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.about-section div {
+  flex: 1;
+}
+
+/* Menu Page */
+.menu-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 2em;
+}
+
+.menu-card {
+  background: #fff;
+  padding: 1em;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-card h3 {
+  text-align: center;
+  color: #4b2e2e;
+  margin-bottom: 1em;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #4b2e2e;
+  color: white;
+  margin-top: 2em;
+}

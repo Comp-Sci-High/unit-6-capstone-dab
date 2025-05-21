@@ -16,12 +16,13 @@ app.use((req, res, next) => {
 
 const FoodSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    ingredients : { type: String },
-    image: { type: String },
-    price: { type: String },
-    hot: { type: Boolean },
-    calories: {type: Number}
+    foodName: { type: String, required: true },
+    ingredients : { type: String, required: true },
+    image: { type: String ,required: true },
+    price: { type: String ,required: true },
+    hot: { type: Boolean  },
+    calories: {type: Number , required: true},
+    rating : { type: Number ,required: true },
     
   }
 );
@@ -29,40 +30,39 @@ const FoodSchema = new mongoose.Schema(
 
 const Food = mongoose.model("Food", FoodSchema, "Foods");
 
-
-app.get("/", async (req, res) => {
-  const teachers = await Teacher.find({}).sort({ createdAt: -1 });
-  res.render("teachers.ejs", { teachers });
-});
-
-app.get("/ratings", async (req, res) => {
-  const ratings = await Rating.find({}).sort({ createdAt: -1 });
-  res.render("ratings.ejs", { ratings });
-});
+app.get("/", async (req,res)=>{
+  const Foods = await Food.find({})
+  res.render("menu.ejs", {Foods})
+})
 
 app.post("/add/food", async (req, res) => {
-  const newRating = await new Rating({
-    food: req.body.username,
-    indegreients : req.body.teacher,
-    comment: req.body.comment,
+  const newFood = await new Food({
+    foodName: req.body.foodName,
+    ingredients : req.body.ingredients,
+    image: req.body.image,
+    price: req.body.price,
+    hot: req.body.hot,
+    calories: req.body.calories,
     rating: req.body.rating,
   }).save();
-  res.json(newRating);
+
+  res.json(newFood);
 });
 
-app.post("/add/teacher", async (req, res) => {
-  const newTeacher = await new Teacher({
-    name: req.body.name,
-    department: req.body.department,
-    image: req.body.image,
-  }).save();
+app.patch("/update/:food", async (req,res)=>{
+  const response = await Food.findOneAndUpdate({foodName: req.params.food},{ingredients: req.body.ingredients})
+  res.json(response)
+})
 
-  res.json(newTeacher);
-});
+app.delete("/delete/:food", async (req,res)=>{
+  const response = await Food.findOneAndDelete({foodName: req.params.food})
+  res.json(response)
+})
+
 
 // Add your SRV string, make sure that the database is called CSHteachers
 async function startServer() {
-  await mongoose.connect("mongodb+srv://SE12:CSH2025@adamo8.b6ydo.mongodb.net/CSHteachers?retryWrites=true&w=majority&appName=AdamO8");
+  await mongoose.connect("mongodb+srv://SE12:CSH2025@adamo8.b6ydo.mongodb.net/CoffeeShop?retryWrites=true&w=majority&appName=AdamO8");
 
   app.listen(3000, () => {
     console.log(`Server running.`);
