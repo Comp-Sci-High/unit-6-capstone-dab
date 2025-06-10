@@ -31,13 +31,19 @@
       <div class="accordion-content">
        <div class="card-container">
             <div class="card">
-             <img src="<%= Foods[i].image %>" alt="<%= Foods[i].foodName %>" />
-             <div class="card-name"><%= Foods[i].foodName %></div>
+              <img src="<%= Foods[i].image %>" alt="<%= Foods[i].foodName %>" />
+              <div class="card-name"><%= Foods[i].foodName %></div>
+              <div class="card-ingredients"><%= Foods[i].ingredients %></div>
+              <div class="card-hot"><%= Foods[i].hot %></div>
+              <div class="card-calories"><%= Foods[i].calories %></div>
               <div class="card-price"><%= Foods[i].price %></div>
           </div>
             <div class="card">
               <img src="<%= Foods[i].image %>" alt="<%= Foods[i].foodName %>" />
-             <div class="card-name"><%= Foods[i].foodName %></div>
+              <div class="card-name"><%= Foods[i].foodName %></div>
+              <div class="card-ingredients"><%= Foods[i].ingredients %></div>
+              <div class="card-hot"><%= Foods[i].hot %></div>
+              <div class="card-calories"><%= Foods[i].calories %></div>
               <div class="card-price"><%= Foods[i].price %></div>
             </div>
          </div>
@@ -52,11 +58,17 @@
           <div class="card">
             <img src="https://images.unsplash.com/photo-1505253210343-c595f96b5a31?auto=format&fit=crop&w=400&q=80" alt="Croissant" />
             <div class="card-name">Croissant</div>
-           <div class="card-price">$3.00</div>
+            <div class="card-ingredients">bread</div>
+            <div class="card-hot">Yes</div>
+            <div class="card-calories">375</div>
+            <div class="card-price">$3.00</div>
           </div>
           <div class="card">
-           <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80" alt="Muffin" />
-           <div class="card-name">Blueberry Muffin</div>
+            <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80" alt="Muffin" />
+            <div class="card-name">Blueberry Muffin</div>
+            <div class="card-ingredients">bread</div>
+            <div class="card-hot">Yes</div>
+            <div class="card-calories">375</div>
             <div class="card-price">$3.00</div>
           </div>
        </div>
@@ -70,12 +82,18 @@
           <div class="card">
             <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Latte" />
             <div class="card-name">Coffee</div>
+            <div class="card-ingredients">coffee beans, water</div>
+            <div class="card-hot">Yes</div>
+            <div class="card-calories">0</div>
            <div class="card-price">$1.50</div>
           </div>
           <div class="card">
             <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=400&q=80" alt="Espresso" />
             <div class="card-name">Ice Coffee</div>
-            <div class="card-price">$3.00</div>
+            <div class="card-ingredients">coffee beans, water, ice </div>
+            <div class="card-hot">No</div>
+            <div class="card-calories">0</div>
+            <div class="card-price">$3.50</div>
           </div>
         </div>
       </div>
