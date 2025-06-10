@@ -3,57 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>menu </title>
+    <link rel="stylesheet" href="menu.css">
 </head>
 <body> 
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="home.html">Memento Coffee Shop</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
+  <nav>
+    <div class="logo">Momento's Coffe shop ☕️</div>
+      <ul>
+        <li>
           <a class="nav-link active" aria-current="page" href="home.html">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="menu.ejs">Menu</a>
-        </li>
-        <li class="nav-item">
+        <li>
           <a class="nav-link" href="aboutPage.html">About Page</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        <li>
+          <a class="nav-link" href="menu.ejs">Menu</a>
         </li>
       </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
 
-    <h1>Menu</h1>
-    <br>
-
-    <div class="Food-grid">
-      <% for (let i = 0; i < Foods.length; i++) { %>
-        <div class="Food-card">
-
-          <img src="<%= Foods[i].image %>" alt="<%= Foods[i].foodName %>" />
-
-          <div class="food">
-            <h2><%= Foods[i].foodName %></h2>
-            <p><strong>Ingredients:</strong> <%= Foods[i].indredients %></p>
-            <p><strong>Price:</strong> <%= Foods[i].price %></p>
-            <p><strong>hot:</strong> <%= Foods[i].hot %></p>
-            <p><strong>calories:</strong> <%= Foods[i].calories %></p>
-            <p><strong>rating:</strong> <%= Foods[i].rating %></p>
+  <h1 class="menu-title">Menu</h1>
+  <br>
+  <div class="accordion">
+    <% for (let i = 0; i < Foods.length; i++) { %>
+      <div class="accordion-item">
+      <div class="accordion-header">Sandwiches</div>
+      <div class="accordion-content">
+       <div class="card-container">
+            <div class="card">
+             <img src="<%= Foods[i].image %>" alt="<%= Foods[i].foodName %>" />
+             <div class="card-name"><%= Foods[i].foodName %></div>
+              <div class="card-price"><%= Foods[i].price %></div>
           </div>
-
+            <div class="card">
+              <img src="<%= Foods[i].image %>" alt="<%= Foods[i].foodName %>" />
+             <div class="card-name"><%= Foods[i].foodName %></div>
+              <div class="card-price"><%= Foods[i].price %></div>
+            </div>
+         </div>
         </div>
-      <% } %>
+      </div>
+    <% } %>
+
+    <div class="accordion-item">
+     <div class="accordion-header">Pastries</div>
+     <div class="accordion-content">
+       <div class="card-container">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1505253210343-c595f96b5a31?auto=format&fit=crop&w=400&q=80" alt="Croissant" />
+            <div class="card-name">Croissant</div>
+           <div class="card-price">$3.00</div>
+          </div>
+          <div class="card">
+           <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80" alt="Muffin" />
+           <div class="card-name">Blueberry Muffin</div>
+            <div class="card-price">$3.00</div>
+          </div>
+       </div>
+      </div>
     </div>
 
+    <div class="accordion-item">
+      <div class="accordion-header">Drinks</div>
+      <div class="accordion-content">
+        <div class="card-container">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Latte" />
+            <div class="card-name">Coffee</div>
+           <div class="card-price">$1.50</div>
+          </div>
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=400&q=80" alt="Espresso" />
+            <div class="card-name">Ice Coffee</div>
+            <div class="card-price">$3.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+<script src="menu.js"></script>
 </body>
 </html>
